@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hemligt rum</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="secret-room">
+  <div class="card">
+    <h1>🗝️ Hemligt rum</h1>
+    <p id="welcomeText">Laddar...</p>
+    <button id="logoutBtn">Logga ut</button>
+  </div>
+
+  <script>
+    const token = localStorage.getItem('token');
+    const welcomeText = document.getElementById('welcomeText');
+    const logoutBtn = document.getElementById('logoutBtn');
+
+    if (!token) {
+      window.location.href = 'index.html';
+    }
+
+    fetch('http://localhost:3000/api/secret', {
+      headers: {
+        'Authorization': 'Bearer ' + token
+      }
+    })
+      .then(res => {
+        if (!res.ok) {
+          throw new Error('Ogiltig token');
+        }
+        return res.json();
+      })
+      .then(data => {
+        welcomeText.textContent = `Välkommen in, ${data.user.username}`;
+      })
+      .catch(err => {
+        welcomeText.textContent = 'Åtkomst nekad';
+        localStorage.removeItem('token');
+        setTimeout(() => window.location.href = 'index.html', 2000);
+      });
+
+    logoutBtn.addEventListener('click', () => {
+      localStorage.removeItem('token');
+      window.location.href = 'index.html';
+    });
+  </script>
+</body>
+</html>

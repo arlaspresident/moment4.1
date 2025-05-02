@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #f5e1ff, #e6f0ff);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  form {
+    background-color: white;
+    padding: 3rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    width: 320px;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #4d3c77;
+    margin-bottom: 1rem;
+  }
+  
+  label {
+    font-weight: bold;
+    color: #4d3c77;
+  }
+  
+  input {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+  }
+  
+  button {
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.75rem;
+    background-color: #b478f1;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #9e5bd9;
+  }
+  
+  #message {
+    text-align: center;
+    margin-top: -0.5rem;
+    color: #ff4d4d;
+    font-weight: 500;
+  }
+  
+body.secret-room {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(120deg, #d0eaff, #ffffff);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card {
+    background-color: white;
+    padding: 3rem;
+    border-radius: 2rem;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    text-align: center;
+  }
+  
+  .card h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .card p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  
+  #logoutBtn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 1rem;
+    background-color: #5c94ff;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  #logoutBtn:hover {
+    background-color: #3d73db;
+  }
+  
