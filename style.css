@@ -24,6 +24,7 @@ body {
     text-align: center;
     color: #4d3c77;
     margin-bottom: 1rem;
+    margin-right: 2rem;
   }
   
   label {
@@ -56,9 +57,9 @@ body {
   
   #message {
     text-align: center;
-    margin-top: -0.5rem;
-    color: #ff4d4d;
-    font-weight: 500;
+    margin-top: 1rem;
+    color: green;
+    font-weight: bold;
   }
   
 body.secret-room {
@@ -102,5 +103,20 @@ body.secret-room {
   
   #logoutBtn:hover {
     background-color: #3d73db;
+  }
+
+  a {
+    text-align: center;
+    display: block;
+    color: #5c4f8c;
+    font-size: 0.95rem;
+    margin-top: 1rem;
+    text-decoration: none;
+    margin-left: 2rem;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+    color: #7a68c3;
   }
   

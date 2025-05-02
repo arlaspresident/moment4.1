@@ -34,7 +34,7 @@
         return res.json();
       })
       .then(data => {
-        welcomeText.textContent = `Välkommen in, ${data.user.username}`;
+        welcomeText.textContent = `Välkommen in, ${data.user.username} :)`;
       })
       .catch(err => {
         welcomeText.textContent = 'Åtkomst nekad';
