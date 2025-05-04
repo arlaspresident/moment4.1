@@ -8,13 +8,22 @@ form.addEventListener('submit', async (e) => {
   const password = document.getElementById('password').value;
 
   try {
-    const response = await fetch('https://moment4-sw08.onrender.com', {
+    const response = await fetch('https://moment4-sw08.onrender.com/api/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username, password })
     });
 
-    const data = await response.json();
+    const text = await response.text();
+    console.log('Rått svar från API:', text);
+
+    let data;
+    try {
+      data = JSON.parse(text);
+    } catch {
+      message.textContent = 'Kunde inte tolka svar från servern.';
+      return;
+    }
 
     if (!response.ok) {
       message.textContent = data.message || 'Något gick fel';
